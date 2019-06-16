@@ -1,0 +1,55 @@
+kind: pipeline
+name: linux-arm-pass
+
+platform:
+  os: linux
+  arch: arm
+
+steps:
+- name: test1
+  image: alpine
+  commands:
+  - ./success.sh
+
+---
+kind: pipeline
+name: linux-arm-fail
+
+platform:
+  os: linux
+  arch: arm
+
+steps:
+- name: test2
+  image: alpine
+  commands:
+  - ./fail.sh
+
+---
+kind: pipeline
+name: linux-amd64-pass
+
+platform:
+  os: linux
+  arch: amd64
+
+steps:
+- name: test1
+  image: alpine
+  commands:
+  - ./success.sh
+
+---
+kind: pipeline
+name: linux-amd64-fail
+
+platform:
+  os: linux
+  arch: amd64
+
+steps:
+- name: test2
+  image: alpine
+  commands:
+  - ./fail.sh
+
