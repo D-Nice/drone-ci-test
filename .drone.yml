@@ -53,3 +53,12 @@ steps:
   commands:
   - ./fail.sh
 
+---
+kind: pipeline
+name: lint-shell
+
+steps:
+- name: shellcheck
+  image: koalaman/shellcheck-alpine
+  commands:
+  - shellcheck *.sh
